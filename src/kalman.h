@@ -72,19 +72,19 @@ namespace JPDAFTracker
 	return x_filter;
       }
     private:
-      Eigen::Matrix4f A; //Evolution state matrix
+      Eigen::Matrix4f A; //Evolution state matrix 状态转移矩阵
       Eigen::Matrix2f Q; //Covariance Matrix associated to the evolution process
-      Eigen::MatrixXf G; //Evolution Noise Matrix
-      Eigen::Matrix4f P; //Covariance Matrix
-      Eigen::MatrixXf C;
-      Eigen::Matrix2f R; //Proces measurement Covariance matrix
-      Eigen::Matrix2f S;
-      Eigen::MatrixXf K; //Gain
-      Eigen::Matrix4f P_predict; //Covariance Matrix predicted error
-      Eigen::Vector4f x_predict;
-      Eigen::Vector4f x_filter;
-      Eigen::Vector2f z_predict;
-      cv::Point2f last_prediction;
+      Eigen::MatrixXf G; //Evolution Noise Matrix 过程噪声协方差矩阵
+      Eigen::Matrix4f P; //Covariance Matrix 估计状态向量协方差矩阵
+      Eigen::MatrixXf C; // 观测矩阵
+      Eigen::Matrix2f R; //Proces measurement Covariance matrix 观测协方差矩阵
+      Eigen::Matrix2f S; // 新息协方差矩阵
+      Eigen::MatrixXf K; //Gain 卡尔曼增益
+      Eigen::Matrix4f P_predict; //Covariance Matrix predicted error 预测状态向量协方差矩阵
+      Eigen::Vector4f x_predict; // 预测状态向量
+      Eigen::Vector4f x_filter; // 估计状态向量
+      Eigen::Vector2f z_predict; // 观测预测状态向量
+      cv::Point2f last_prediction; 
       Eigen::Vector2f last_prediction_eigen;
       cv::Point2f last_speed;
       bool first;
