@@ -123,11 +123,11 @@ namespace JPDAFTracker
 	return KF->getUpdate();
       }
     private:
-      int id;
-      int maxNotDetection;
-      std::shared_ptr<Kalman> KF;
-      float ellipse_volume;
-      int number_returns;
+      int id; //航迹ID
+      int maxNotDetection;  //允许最大没有检测到的数量
+      std::shared_ptr<Kalman> KF; //卡尔曼滤波器
+      float ellipse_volume; //椭圆体积
+      int number_returns; 
       float side;
       float g_sigma;
       float gamma;
@@ -136,7 +136,7 @@ namespace JPDAFTracker
       float initial_entropy;
       TrackState entropy_sentinel;
       cv::Point2f last_prediction;
-      cv::Scalar color_;
+      cv::Scalar color_;  //航迹颜色
   };
 }
 
