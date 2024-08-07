@@ -81,7 +81,7 @@ namespace JPDAFTracker
       bool startTracking_;
       TrackerParam param_;
       Tracks tracks_;  // std::vector<std::shared_ptr<Track>>, 航迹数量
-      Vec2f prev_detections_;
+      Vec2f prev_detections_;  //std::vector<Eigen::Vector2f> 上一步所有的观测值
       Vectors2f not_associated_;
       cv::RNG rng_;
       Eigen::MatrixXf beta_;
