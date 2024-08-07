@@ -80,7 +80,7 @@ namespace JPDAFTracker
       bool init_;
       bool startTracking_;
       TrackerParam param_;
-      Tracks tracks_;
+      Tracks tracks_;  // std::vector<std::shared_ptr<Track>>, 航迹数量
       Vec2f prev_detections_;
       Vectors2f not_associated_;
       cv::RNG rng_;
